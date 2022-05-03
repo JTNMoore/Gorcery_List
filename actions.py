@@ -1,5 +1,6 @@
 from items import Item
 
+#this function creates a new list and then call the add_to function to add items
 def create_list(list_name):
     #create a new list using user input
     list_name = []
@@ -8,7 +9,8 @@ def create_list(list_name):
     #end function
     return
     
-            
+
+#this function adds items to a list
 def add_to(list_name):
     list_name = []
     #continue looping until the user quits
@@ -33,10 +35,12 @@ def add_to(list_name):
                     name = input("Enter the items you would like to add to the list or type 'R' to return to Section list: ")
                     #if entry is not blank or q add it to the list
                     if name and name.lower() != "r":
-                        new_item = Item(name, section, store)
+                        quantity = input("How many of this item are needed:")
+                        new_item = Item(name, section, store, quantity)
                         list_name.append(new_item)
                     
-        
+
+#this function prints the items in the list using the class function list_item
 def print_list(list):
     for i in list:
         i.list_item()
