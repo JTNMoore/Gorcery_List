@@ -7,7 +7,9 @@ def main():
         action = input("'C' to create new list\n'V' to view list\n'A' to add to list\n'D' to delete from list\n'E' To edit item in list: ")
         #If user enters Q or q quit program
         if action.lower() == 'c':
-            a.create_list(input("Please enter a list name: "))
+            a.create_list(input("Please enter a name for the new list: "))
+        if action.lower() == 'a':
+            a.add_to(input("Please enter the name of the list you would like to add to: "))
         elif action.lower() == 'q':
             return print("Thank you!")
 
