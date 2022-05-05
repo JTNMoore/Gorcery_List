@@ -7,4 +7,7 @@ class Item:
         self.quantity = quantity
         
     def list_item(self):
-        print(self.name + " x" + self.quantity + " -- " + self.store + " -- " + self.section)
+        print(self.store + " -- " + self.section + " -- " + self.name + " x" + self.quantity)
+
+    def item_out(self):
+        return("['" + self.name + "'," + "'" + self.section + "'," + "'" + self.store + "'," + "'" + self.quantity + "']")
