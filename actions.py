@@ -1,8 +1,10 @@
 from items import Item
 from operator import attrgetter
+import item_database as id
 
 #this function creates a new list and then call the add_to function to add items
 def create_list(list_name):
+    id.add_list(list_name)
     #calling 'add_to' function to populate new list
     add_to(list_name)
     #end function
