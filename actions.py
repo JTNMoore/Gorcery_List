@@ -45,16 +45,7 @@ def add_to(list_name):
 
 #this function prints the items in the list using the class function list_item and add them to the item_lists file
 def print_list(name, list):
-    item_file = open("item_lists.txt", 'a')
-    item_file.write(name + "=[")
-    count = 1
     for i in list:
-        item_file.write(i.item_out())
-        if len(list) > 1 and count != len(list):
-            item_file.write(",")
-        count += 1
-        #i.list_item()
-    item_file.write("]\n")
-    item_file.close()
+        i.list_item()
     return
 

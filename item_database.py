@@ -38,7 +38,6 @@ def add_list(name):
                         VALUES (?);'''
         data_tuple = (name,)
         cursor.execute(add_table, data_tuple)
-        print(cursor.lastrowid)
         print("List successfully created in SQLite database.")
     except sqlite3.Error as error:
         print("Failed to insert list into SQLite database", error)
