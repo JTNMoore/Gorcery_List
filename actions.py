@@ -4,6 +4,7 @@ import item_database as id
 
 #this function creates a new list and then call the add_to function to add items
 def create_list(list_name):
+    #creates the list in database
     id.add_list(list_name)
     #calling 'add_to' function to populate new list
     add_to(list_name)
@@ -18,8 +19,9 @@ def add_to(list_name):
     while True:
         #user input for store name
         store = input("Enter the name for the store you want to make a list for or 'R' to return: ")
+        # end function and print out list created
         if store.lower() == "r":
-            #end function and print out list created
+            #sort list based first on store then section, then item
             item_list.sort(key=attrgetter('store', 'section', 'name'))
             print(list_name)
             print_list(list_name, item_list)
@@ -39,7 +41,9 @@ def add_to(list_name):
                     #if entry is not blank or q add it to the list
                     if name and name.lower() != "r":
                         quantity = input("How many of this item are needed:")
+                        #create item object using user input
                         new_item = Item(name, section, store, quantity)
+                        #add item object to list
                         item_list.append(new_item)
                     
 
